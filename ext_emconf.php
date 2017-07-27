@@ -3,7 +3,7 @@
 /***************************************************************
  * Extension Manager/Repository config file for ext "realurl_clearcache".
  *
- * Auto generated 24-03-2014 21:35
+ * Auto generated 22-07-2014 11:36
  *
  * Manual updates:
  * Only the data in the array - everything else is removed by next
@@ -14,38 +14,27 @@ $EM_CONF[$_EXTKEY] = array (
 	'title' => 'RealURL: Clear cache',
 	'description' => 'Adds a clear cache button for RealURL in the back-end clear cache menu.',
 	'category' => 'be',
-	'shy' => 0,
-	'version' => '1.0.5-dev',
-	'dependencies' => '',
-	'conflicts' => '',
-	'priority' => '',
-	'loadOrder' => '',
-	'module' => '',
+	'version' => '2.0.0',
 	'state' => 'stable',
 	'uploadfolder' => 0,
 	'createDirs' => '',
-	'modify_tables' => '',
 	'clearcacheonload' => 1,
-	'lockType' => '',
-	'author' => 'Sebastiaan de Jonge (SebastiaanDeJonge.com)',
-	'author_email' => 'szebi.eger@gmail.com',
+	'author' => 'Sebastiaan de Jonge (SebastiaanDeJonge.com), Felix Rupp',
+	'author_email' => 'szebi.eger@gmail.com, kontakt@felixrupp.com',
 	'author_company' => 'SebastiaanDeJonge.com',
-	'CGLcompliance' => NULL,
-	'CGLcompliance_note' => NULL,
-	'constraints' => 
+	'constraints' =>
 	array (
-		'depends' => 
+		'depends' =>
 		array (
-			'realurl' => '',
-			'typo3' => '4.3.0-0.0.0',
+			'realurl' => '2.2.1-2.2.99',
+			'typo3' => '6.2.99-7.6.99',
 		),
-		'conflicts' => 
+		'conflicts' =>
 		array (
 		),
-		'suggests' => 
+		'suggests' =>
 		array (
 		),
 	),
 );
 
-?>

@@ -32,9 +32,6 @@
  * TOTAL FUNCTIONS: 1
  */
 
-//require_once(PATH_typo3.'interfaces/interface.backend_cacheActionsHook.php');
-require_once(t3lib_extMgm::extPath('realurl_clearcache').'class.tx_realurlclearcache.php');
-
 /**
  * Main class file for the 'RealURL: Clear cache' extension
  *
@@ -52,9 +49,9 @@ class tx_realurlclearcache_cachemenu implements \TYPO3\CMS\Backend\Toolbar\Clear
 	 * @see typo3/interfaces/backend_cacheActionsHook#manipulateCacheActions($cacheActions, $optionValues)
 	 */
 	public function manipulateCacheActions(&$a_cacheActions, &$a_optionValues) {
-		if($GLOBALS['BE_USER']->isAdmin() || $GLOBALS['BE_USER']->getTSConfigVal('options.clearCache.realurl')) {
+		if(($GLOBALS['BE_USER']->isAdmin() || $GLOBALS['BE_USER']->getTSConfigVal('options.clearCache.realurl'))) {
 			$s_title = $GLOBALS['LANG']->sL('LLL:EXT:realurl_clearcache/locallang.xml:rm.clearCacheMenu_realUrlClearCache', true);
-			$s_imagePath = t3lib_extMgm::extRelPath('realurl_clearcache').'res/';
+			$s_imagePath = \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::extRelPath('realurl_clearcache').'res/';
 			if(strpos($s_imagePath,'typo3conf') !== false) $s_imagePath = '../'.$s_imagePath;
 			$a_cacheActions[] = array(
 				'id'    => 'realurl_cache',
