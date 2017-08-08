@@ -46,10 +46,10 @@ class tx_realurlclearcache {
 	 * @return	void
 	 */
 	public static function clear() {
-		$GLOBALS['TYPO3_DB']->sql_query('TRUNCATE TABLE tx_realurl_pathcache;');
+		$GLOBALS['TYPO3_DB']->sql_query('TRUNCATE TABLE tx_realurl_pathdata;');
 		$GLOBALS['TYPO3_DB']->sql_query('TRUNCATE TABLE tx_realurl_uniqalias;');
 		$GLOBALS['TYPO3_DB']->sql_query('TRUNCATE TABLE tx_realurl_uniqalias_cache_map;');
-		$GLOBALS['TYPO3_DB']->sql_query('TRUNCATE TABLE tx_realurl_urlcache;');
+		$GLOBALS['TYPO3_DB']->sql_query('TRUNCATE TABLE tx_realurl_urldata;');
 	}
 
 	/**
@@ -130,11 +130,11 @@ class tx_realurlclearcache {
 
 		// Clear RealURL cache tables
 		$GLOBALS['TYPO3_DB']->exec_DELETEquery(
-			'tx_realurl_pathcache',
+			'tx_realurl_pathdata',
 			'page_id = '.$i_pid
 		);
 		$GLOBALS['TYPO3_DB']->exec_DELETEquery(
-			'tx_realurl_urlcache',
+			'tx_realurl_urldata',
 			'page_id = '.$i_pid
 		);
 
